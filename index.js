@@ -1,6 +1,5 @@
 import  express from "express";
 import bodyparser from "body-parser";
-// import PostData from "./model/postdata.js";
 import { senddata } from "./controllers/UpdatetoDatabase.js";
 import { getdata } from "./controllers/getdata.js";
 import cors from 'cors';
