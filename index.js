@@ -5,9 +5,14 @@ import { getdata } from "./controllers/getdata.js";
 import cors from 'cors';
 import mongoose from "mongoose";
 import { senddetails } from "./controllers/Updatedetails.js";
+import * as dotenv from 'dotenv';
+dotenv.config()
 async function main(){
-    await mongoose.connect('mongodb://localhost:27017/AdminHss')
+    
+    await mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/projecthss`,{useNewUrlParser:true,useUnifiedTopology:true});
+  
 }
+
 main().then(console.log('Database pluged in!!')).catch(err=>console.log(err));
 const app = express()
 app.use(cors())
