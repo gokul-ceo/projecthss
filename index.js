@@ -16,7 +16,7 @@ async function main(){
 main().then(console.log('Database pluged in!!')).catch(err=>console.log(err));
 const app = express()
 app.use(cors({
-  origin:"http://localhost:3000/"
+  origin:"*"
 }))
 
 app.use(bodyparser.json())
