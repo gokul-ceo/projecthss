@@ -26,5 +26,5 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.post('/',senddata)
 app.get('/data',getdata)
 app.post('/senddetails',senddetails)
-
-app.listen(process.env.PORT || 4000,(()=>{console.log('server is running on:', port)}))
+var port = process.env.PORT || 4000;
+app.listen({port},(()=>{console.log('server is running on:', port)}))
