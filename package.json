@@ -9,7 +9,8 @@
     "start:dev":"nodemon index.js"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "16.13.1",
+    "npm": "--version"
   },
   "author": "gokul",
   "license": "ISC",
