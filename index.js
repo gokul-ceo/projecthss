@@ -16,6 +16,11 @@ async function main(){
 main().then(console.log('Database pluged in!!')).catch(err=>console.log(err));
 const app = express()
 app.use(cors())
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}));
 const port  = process.env.PORT || 4000
