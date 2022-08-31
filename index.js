@@ -2,7 +2,6 @@ import  express from "express";
 import bodyparser from "body-parser";
 import { senddata } from "./controllers/UpdatetoDatabase.js";
 import { getdata } from "./controllers/getdata.js";
-import cors from 'cors';
 import mongoose from "mongoose";
 import { senddetails } from "./controllers/Updatedetails.js";
 import * as dotenv from 'dotenv';
@@ -15,10 +14,13 @@ async function main(){
 
 main().then(console.log('Database pluged in!!')).catch(err=>console.log(err));
 const app = express()
-app.use(cors({
-  origin:"http://localhost:3000/form",
-  credentials:true
-}))
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}));
