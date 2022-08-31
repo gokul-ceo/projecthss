@@ -23,9 +23,8 @@ app.all('/', function(req, res, next) {
   });
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}));
-const port  = process.env.PORT || 4000
 app.post('/',senddata)
 app.get('/data',getdata)
 app.post('/senddetails',senddetails)
 
-app.listen({port},(()=>{console.log('server is running on:', port)}))
+app.listen(process.env.PORT || 4000,(()=>{console.log('server is running on:', port)}))
