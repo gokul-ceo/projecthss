@@ -8,6 +8,12 @@ import { senddetails } from "./controllers/Updatedetails.js";
 import * as dotenv from 'dotenv';
 dotenv.config()
 const app = express()
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 app.use(cors());
 async function main(){
     
