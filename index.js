@@ -11,7 +11,7 @@ const app = express()
 app.use(cors());
 async function main(){
     
-    await mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/?retryWrites=true&w=majority`);
+    await mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/?retryWrites=true&w=majority&ssl=true`);
   
 }
 
