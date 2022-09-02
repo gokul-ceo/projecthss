@@ -3,6 +3,7 @@ import bodyparser from "body-parser";
 import { senddata } from "./controllers/UpdatetoDatabase.js";
 import { getdata } from "./controllers/getdata.js";
 import mongoose from "mongoose";
+import cors from "cors"
 import { senddetails } from "./controllers/Updatedetails.js";
 import * as dotenv from 'dotenv';
 dotenv.config()
@@ -14,13 +15,13 @@ async function main(){
 
 main().then(console.log('Database pluged in!!')).catch(err=>console.log(err));
 const app = express()
-const cors = require('cors');
-const corsOptions ={
-    origin:'http://localhost:3000', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+// import cor
+// const corsOptions ={
+//     origin:'http://localhost:3000', 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+app.use(cors());
 
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}));

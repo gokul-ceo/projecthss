@@ -11,6 +11,7 @@
     "node": "16.13.1",
     "npm": "8.8.0"
   },
+  "type": "module",
   "author": "gokul",
   "license": "ISC",
   "dependencies": {
