@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import cors from "cors"
 import { senddetails } from "./controllers/Updatedetails.js";
 import * as dotenv from 'dotenv';
-dotenv.config()
+dotenv.config({path:'URL'})
 const app = express()
 const corsOptions ={
     origin:'*', 
