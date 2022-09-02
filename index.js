@@ -17,7 +17,14 @@ app.use(cors(corsOptions));
 app.use(cors());
 async function main(){
     
-    await mongoose.connect(process.env.URL);
+    await mongoose.connect(process.env.URL,{
+        server:{
+            socketOptions:{
+                socketTimeoutMS:0,
+                connectionTimeout:0
+            }
+        }
+    });
   
 }
 
