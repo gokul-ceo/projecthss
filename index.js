@@ -17,7 +17,7 @@ app.use(cors(corsOptions));
 app.use(cors());
 async function main(){
     
-    await mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/projecthss`);
+    await mongoose.connect(`mongodb+srv://gokul_001:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/?retryWrites=true&w=majority`);
   
 }
 
