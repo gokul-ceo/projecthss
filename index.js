@@ -9,7 +9,7 @@ import * as dotenv from 'dotenv';
 dotenv.config()
 async function main(){
     
-    await mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/projecthss`,{useNewUrlParser:true,useUnifiedTopology:true});
+    await mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.gdrlwqs.mongodb.net/projecthss?ssl=true`,{useNewUrlParser:true,useUnifiedTopology:true});
   
 }
 
