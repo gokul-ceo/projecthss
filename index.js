@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import cors from "cors"
 import { senddetails } from "./controllers/Updatedetails.js";
 import * as dotenv from 'dotenv';
-dotenv.config({path:'URL'})
+dotenv.config()
 const app = express()
 const corsOptions ={
     origin:'*', 
@@ -16,15 +16,9 @@ const corsOptions ={
 app.use(cors(corsOptions));
 app.use(cors());
 async function main(){
-    
-    await mongoose.connect(process.env.URL,{
-        server:{
-            socketOptions:{
-                socketTimeoutMS:0,
-                connectionTimeout:0
-            }
-        }
-    });
+    // const NAME = process.env.NAME;
+    // const PWD  = process.env.PASSWORD;
+    await mongoose.connect('mongodb+srv://'+process.env.NAME+':'+process.env.PASSWORD+'@cluster0.6rrt67l.mongodb.net/HSS');
   
 }
 
