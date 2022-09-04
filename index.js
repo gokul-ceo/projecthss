@@ -33,7 +33,7 @@ main().then(console.log('Database pluged in!!')).catch(err=>console.log(err));
 
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}));
-app.post('sadx232asdfasdf/',senddata)
+app.post('/sadx232asdfasdf/',senddata)
 app.get('/sadx232asdfasdf/data',getdata)
 app.post('/sadx232asdfasdf/senddetails',senddetails)
 var port = process.env.PORT || 4000;
