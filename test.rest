@@ -1,0 +1,15 @@
+POST  http://localhost:4000/vendordata?type=credit&amount=1000
+
+###
+GET http://localhost:4000/auth/google
+
+
+###
+GET http://localhost:4000/admindata/availablemenuitems
+
+
+###
+POST http://localhost:4000/like?itemname=idly&customerid=000920
+
+###
+GET http://localhost:4000/customer/menu?type=extras
