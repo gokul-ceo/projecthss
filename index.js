@@ -105,12 +105,6 @@ instrument(io, {
   auth: false,
 });
 var port = process.env.PORT || 4000;
-mongoose.connect(
-  `mongodb+srv://gokul_g:rzihq1iiSgWlUlHd@hssbase-main.54opb82.mongodb.net/hss-main-base(testing)`,
-  () => {
-    console.log("Database is connected!");
-  }
-);
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
